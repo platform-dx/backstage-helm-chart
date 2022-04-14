@@ -1,13 +1,14 @@
 # Default values for backstage.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+dockerRegistrySecretName: regcred
 
 frontend:
   enabled: false
   replicaCount: 1
   image:
-    repository: martinaif/backstage-k8s-demo-frontend
-    tag: test1
+    repository: 626109959667.dkr.ecr.us-east-1.amazonaws.com/backstage-frontend
+    tag: 949677b
     pullPolicy: IfNotPresent
   containerPort: 80
   serviceType: ClusterIP
@@ -23,8 +24,8 @@ backend:
   demoData: true
   replicaCount: 1
   image:
-    repository: martinaif/backstage-k8s-demo-backend
-    tag: 20210423T1550
+    repository: 626109959667.dkr.ecr.us-east-1.amazonaws.com/backstage-backend
+    tag: 949677b
     pullPolicy: IfNotPresent
   containerPort: 7007
   serviceType: ClusterIP
