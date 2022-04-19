@@ -15,37 +15,41 @@ backend:
 
 catalog:
 {{- if .Values.backend.demoData }}
+  import:
+    entityFilename: catalog-info.yaml
+    pullRequestBranchName: backstage-integration
+  rules:
+    - allow: [Component, System, API, Group, User, Resource, Location]
   locations:
-    # Backstage example components
-    - type: github
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-components.yaml
-    # Example component for github-actions
-    - type: github
-      target: https://github.com/backstage/backstage/blob/master/plugins/github-actions/examples/sample.yaml
-    # Example component for techdocs
-    - type: github
-      target: https://github.com/backstage/backstage/blob/master/plugins/techdocs-backend/examples/documented-component/documented-component.yaml
-    # Backstage example APIs
-    - type: github
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-apis.yaml
-    # Backstage example templates
-    - type: github
-      target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/all-templates.yaml
+    - type: url
+      target: https://github.com/twlabs/empc-demo-backstage-frontend/blob/feature-frontend-template/template.yaml
+      rules:
+        - allow: [Template]
 {{- else }}
   locations: []
 {{- end }}
 
+integrations:
+  github:
+    - host: github.com
+      token: ${GITHUB_TOKEN}
+
 auth:
-  providers:
-    microsoft: null
+  providers: {}
 
 scaffolder:
-  azure: null
+  defaultAuthor:
+    name: EMPC DX
+    email: empc-dx@thoughtworks.com
+  defaultCommitMessage: "Platform DX ++"
 
 
 sentry:
   organization: {{ .Values.appConfig.sentry.organization | quote }}
 
 techdocs:
-  generator: 
+  builder: 'local'
+  generator:
     runIn: 'local'
+  publisher:
+    type: 'local'
