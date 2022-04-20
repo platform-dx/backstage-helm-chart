@@ -22,7 +22,7 @@ catalog:
     - allow: [Component, System, API, Group, User, Resource, Location]
   locations:
     - type: url
-      target: https://github.com/twlabs/empc-demo-backstage-frontend/blob/feature-frontend-template/template.yaml
+      target: https://github.com/twlabs/empc-demo-backstage-frontend/blob/main/template.yaml
       rules:
         - allow: [Template]
 {{- else }}
