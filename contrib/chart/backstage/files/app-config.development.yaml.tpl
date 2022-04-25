@@ -34,6 +34,12 @@ integrations:
     - host: github.com
       token: ${GITHUB_TOKEN}
 
+proxy:
+  '/circleci/api':
+    target: https://circleci.com/api/v1.1
+    headers:
+      Circle-Token: ${CIRCLECI_AUTH_TOKEN}
+
 auth:
   providers: {}
 

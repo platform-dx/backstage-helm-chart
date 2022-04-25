@@ -8,7 +8,7 @@ frontend:
   replicaCount: 1
   image:
     repository: 626109959667.dkr.ecr.us-east-1.amazonaws.com/backstage-frontend
-    tag: cdaca59
+    tag: a4b1014
     pullPolicy: IfNotPresent
   containerPort: 80
   serviceType: ClusterIP
@@ -25,7 +25,7 @@ backend:
   replicaCount: 1
   image:
     repository: 626109959667.dkr.ecr.us-east-1.amazonaws.com/backstage-backend
-    tag: cdaca59
+    tag: a4b1014
     pullPolicy: IfNotPresent
   containerPort: 7007
   serviceType: ClusterIP
