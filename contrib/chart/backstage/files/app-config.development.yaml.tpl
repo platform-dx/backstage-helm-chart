@@ -25,6 +25,10 @@ catalog:
       target: https://github.com/twlabs/empc-demo-backstage-frontend/blob/main/template.yaml
       rules:
         - allow: [Template]
+    - type: url
+      target: https://github.com/twlabs/empc-demo-backstage-openapi/blob/main/template.yaml
+      rules:
+        - allow: [Template]
 {{- else }}
   locations: []
 {{- end }}
