@@ -94,6 +94,8 @@ appConfig:
     baseUrl: https://demo.example.com
     title: Backstage
     googleAnalyticsTrackingId:
+  organization:
+    name: DemoDX  
   backend:
     baseUrl: https://demo.example.com
     listen:
