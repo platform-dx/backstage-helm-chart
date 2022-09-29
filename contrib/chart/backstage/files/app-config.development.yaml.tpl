@@ -44,8 +44,22 @@ proxy:
     headers:
       Circle-Token: ${CIRCLECI_AUTH_TOKEN}
 
+  '/sonarqube':
+    target: 'sonar.com/api'
+    allowedMethods: ['GET']
+    auth: '${SONARQUBE_AUTH_TOKEN}:'
+
+sonarqube:
+  baseUrl: sonar.com
+  apiKey: ${SONARQUBE_AUTH_TOKEN}
+
 auth:
-  providers: {}
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: ${GITHUB_CLIENT_ID}
+        clientSecret: ${GITHUB_CLIENT_SECRET}
 
 scaffolder:
   defaultAuthor:
