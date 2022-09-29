@@ -212,6 +212,7 @@ auth:
   rollbarAccountToken: f
   # This is a 'Personal Access Token'
   circleciAuthToken: r
+  sonarqubeAuthToken: r
   # Used by the scaffolder to create GitHub repos. Must have 'repo' scope.
   githubToken: g
   gitlabToken: g
