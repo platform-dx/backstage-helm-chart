@@ -45,12 +45,12 @@ proxy:
       Circle-Token: ${CIRCLECI_AUTH_TOKEN}
 
   '/sonarqube':
-    target: 'sonar.com/api'
+    target: '{{ .Values.appConfig.sonarqube.baseUrl }}/api'
     allowedMethods: ['GET']
     auth: '${SONARQUBE_AUTH_TOKEN}:'
 
 sonarqube:
-  baseUrl: sonar.com
+  baseUrl: {{ .Values.appConfig.sonarqube.baseUrl }}
   apiKey: ${SONARQUBE_AUTH_TOKEN}
 
 auth:
