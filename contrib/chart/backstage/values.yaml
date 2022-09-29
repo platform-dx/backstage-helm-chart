@@ -25,7 +25,7 @@ backend:
   replicaCount: 1
   image:
     repository: 626109959667.dkr.ecr.us-east-1.amazonaws.com/backstage-backend
-    tag: 03a77b8
+    tag: 83d2e73
     pullPolicy: IfNotPresent
   containerPort: 7007
   serviceType: ClusterIP
