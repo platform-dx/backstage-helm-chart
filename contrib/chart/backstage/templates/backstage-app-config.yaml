@@ -11,19 +11,14 @@ kind: ConfigMap
 metadata:
   name: {{ include "backstage.fullname" . }}-app-env
 data:
-  APP_CONFIG_app_baseUrl: {{ .Values.appConfig.app.baseUrl | quote | quote }}
-  APP_CONFIG_app_title: {{ .Values.appConfig.app.title | quote | quote }}
-  APP_CONFIG_app_googleAnalyticsTrackingId: {{ .Values.appConfig.app.googleAnalyticsTrackingId | quote | quote }}
-  APP_CONFIG_organization_name: {{ .Values.appConfig.organization.name | quote | quote }}
-  APP_CONFIG_backend_baseUrl: {{ .Values.appConfig.backend.baseUrl | quote | quote }}
-  APP_CONFIG_backend_cors_origin: {{ .Values.appConfig.backend.cors.origin | quote | quote }}
-  APP_CONFIG_techdocs_storageUrl: {{ .Values.appConfig.techdocs.storageUrl | quote | quote }}
-  APP_CONFIG_techdocs_requestUrl: {{ .Values.appConfig.techdocs.requestUrl | quote | quote }}
-  APP_CONFIG_lighthouse_baseUrl: {{ .Values.appConfig.lighthouse.baseUrl | quote | quote }}
-  APP_CONFIG_backend_database_connection_ssl_rejectUnauthorized: "false"
-  APP_CONFIG_sonarqube_baseUrl: {{ .Values.appConfig.sonarqube.baseUrl | quote | quote }}
-  APP_CONFIG_auth_providers_github_development_appOrigin: {{ .Values.appConfig.auth.providers.github.development.appOrigin | quote | quote }}
-  APP_CONFIG_auth_providers_google_development_appOrigin: {{ .Values.appConfig.auth.providers.google.development.appOrigin | quote | quote }}
-  APP_CONFIG_auth_providers_gitlab_development_appOrigin: {{ .Values.appConfig.auth.providers.gitlab.development.appOrigin | quote | quote }}
-  APP_CONFIG_auth_providers_okta_development_appOrigin: {{ .Values.appConfig.auth.providers.okta.development.appOrigin | quote | quote }}
-  APP_CONFIG_auth_providers_oauth2_development_appOrigin: {{ .Values.appConfig.auth.providers.oauth2.development.appOrigin | quote | quote }}
+  APP_BASE_URL: {{ .Values.appConfig.app.baseUrl | quote | quote }}
+  APP_TITLE: {{ .Values.appConfig.app.title | quote | quote }}
+  AUTH_GITHUB_APP_ORIGIN: {{ .Values.appConfig.auth.providers.github.development.appOrigin | quote | quote }}
+  APP_GOOGLE_ANALYTICS_TRACKING_ID: {{ .Values.appConfig.app.googleAnalyticsTrackingId | quote | quote }}
+  ORGANIZATION_NAME: {{ .Values.appConfig.organization.name | quote | quote }}
+  BACKEND_BASE_URL: {{ .Values.appConfig.backend.baseUrl | quote | quote }}
+  BACKEND_CORS_ORIGIN: {{ .Values.appConfig.backend.cors.origin | quote | quote }}
+  TECH_DOCS_STORAGE_URL: {{ .Values.appConfig.techdocs.storageUrl | quote | quote }}
+  TECH_DOCS_REQUEST_URL: {{ .Values.appConfig.techdocs.requestUrl | quote | quote }}
+  LIGHTHOUSE_BASE_URL: {{ .Values.appConfig.lighthouse.baseUrl | quote | quote }}
+  SONARQUBE_URL: {{ .Values.appConfig.sonarqube.baseUrl | quote | quote }}
