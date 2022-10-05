@@ -22,3 +22,4 @@ data:
   TECH_DOCS_REQUEST_URL: {{ .Values.appConfig.techdocs.requestUrl | quote | quote }}
   LIGHTHOUSE_BASE_URL: {{ .Values.appConfig.lighthouse.baseUrl | quote | quote }}
   SONARQUBE_URL: {{ .Values.appConfig.sonarqube.baseUrl | quote | quote }}
+  APP_CONFIG_backend_database_connection_ssl_rejectUnauthorized: "false"
