@@ -27,15 +27,6 @@ spec:
       {{- end}}
       containers:
         - name: {{ .Chart.Name }}-frontend
-          command: ["node"]
-          args:
-            - "packages/app"
-            - "--config"
-            - "app-config.yaml"
-            - "--config"
-            - "app-config.production.yaml"
-            - "--config"
-            - {{ printf "/usr/src/app/%s" (include "backstage.appConfigFilename" .) | quote }}
           image: {{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           ports:
