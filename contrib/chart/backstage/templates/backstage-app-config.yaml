@@ -4,7 +4,7 @@ metadata:
   name: {{ include "backstage.fullname" . }}-app-config
 data:
 {{ include "backstage.appConfigFilename" . | indent 2 }}: |
-{{ tpl (.Files.Get "files/app-config.development.yaml.tpl") . | indent 4 }}
+{{ tpl (.Files.Get "files/app-config.dynamic.yaml.tpl") . | indent 4 }}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -22,4 +22,4 @@ data:
   TECH_DOCS_REQUEST_URL: {{ .Values.appConfig.techdocs.requestUrl | quote | quote }}
   LIGHTHOUSE_BASE_URL: {{ .Values.appConfig.lighthouse.baseUrl | quote | quote }}
   SONARQUBE_URL: {{ .Values.appConfig.sonarqube.baseUrl | quote | quote }}
-  APP_CONFIG_backend_database_connection_ssl_rejectUnauthorized: "false"
+  #APP_CONFIG_backend_database_connection_ssl_rejectUnauthorized: "false"

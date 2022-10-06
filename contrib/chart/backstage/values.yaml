@@ -21,7 +21,6 @@ frontend:
 backend:
   enabled: true
   nodeEnv: development
-  demoData: true
   replicaCount: 1
   image:
     repository: 626109959667.dkr.ecr.us-east-1.amazonaws.com/backstage-backend
