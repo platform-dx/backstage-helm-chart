@@ -13,8 +13,7 @@ metadata:
 data:
   #needed for front-end image:
   APP_CONFIG_backend_baseUrl: {{ .Values.appConfig.backend.baseUrl | quote | quote }}
-  {{ .Values.configMap }}
-
+  {{- toYaml .Values.configMap | nindent 2 }}
   # APP_BASE_URL: {{ .Values.appConfig.app.baseUrl | quote  }}
   # APP_TITLE: {{ .Values.appConfig.app.title | quote }}
   # AUTH_GITHUB_APP_ORIGIN: {{ .Values.appConfig.auth.providers.github.development.appOrigin | quote }}
