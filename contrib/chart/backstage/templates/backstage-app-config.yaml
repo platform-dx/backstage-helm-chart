@@ -19,5 +19,5 @@ data:
   BACKEND_CORS_ORIGIN: {{ .Values.appConfig.backend.cors.origin | quote }}
   LIGHTHOUSE_BASE_URL: {{ .Values.appConfig.lighthouse.baseUrl | quote }}
   SONARQUBE_URL: {{ .Values.appConfig.sonarqube.baseUrl | quote }}
+  #needed for front-end image:
   APP_CONFIG_backend_baseUrl: {{ .Values.appConfig.backend.baseUrl | quote | quote }}
-  #APP_CONFIG_backend_cors_origin: {{ .Values.appConfig.backend.cors.origin | quote | quote }}
