@@ -11,13 +11,16 @@ kind: ConfigMap
 metadata:
   name: {{ include "backstage.fullname" . }}-app-env
 data:
-  APP_BASE_URL: {{ .Values.appConfig.app.baseUrl | quote  }}
-  APP_TITLE: {{ .Values.appConfig.app.title | quote }}
-  AUTH_GITHUB_APP_ORIGIN: {{ .Values.appConfig.auth.providers.github.development.appOrigin | quote }}
-  APP_GOOGLE_ANALYTICS_TRACKING_ID: {{ .Values.appConfig.app.googleAnalyticsTrackingId | quote }}
-  ORGANIZATION_NAME: {{ .Values.appConfig.organization.name | quote }}
-  BACKEND_CORS_ORIGIN: {{ .Values.appConfig.backend.cors.origin | quote }}
-  LIGHTHOUSE_BASE_URL: {{ .Values.appConfig.lighthouse.baseUrl | quote }}
-  SONARQUBE_URL: {{ .Values.appConfig.sonarqube.baseUrl | quote }}
   #needed for front-end image:
   APP_CONFIG_backend_baseUrl: {{ .Values.appConfig.backend.baseUrl | quote | quote }}
+  {{ .Values.configMap | indent 4 }}
+
+  # APP_BASE_URL: {{ .Values.appConfig.app.baseUrl | quote  }}
+  # APP_TITLE: {{ .Values.appConfig.app.title | quote }}
+  # AUTH_GITHUB_APP_ORIGIN: {{ .Values.appConfig.auth.providers.github.development.appOrigin | quote }}
+  # APP_GOOGLE_ANALYTICS_TRACKING_ID: {{ .Values.appConfig.app.googleAnalyticsTrackingId | quote }}
+  # ORGANIZATION_NAME: {{ .Values.appConfig.organization.name | quote }}
+  # BACKEND_CORS_ORIGIN: {{ .Values.appConfig.backend.cors.origin | quote }}
+  # LIGHTHOUSE_BASE_URL: {{ .Values.appConfig.lighthouse.baseUrl | quote }}
+  # SONARQUBE_URL: {{ .Values.appConfig.sonarqube.baseUrl | quote }}
+  
