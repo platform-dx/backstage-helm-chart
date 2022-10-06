@@ -92,7 +92,7 @@ appConfig:
   app:
     baseUrl: https://demo.example.com
     title: Backstage
-    googleAnalyticsTrackingId:
+    googleAnalyticsTrackingId: ''
   organization:
     name: DemoDX  
   backend:
