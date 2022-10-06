@@ -13,7 +13,7 @@ metadata:
 data:
   #needed for front-end image:
   APP_CONFIG_backend_baseUrl: {{ .Values.appConfig.backend.baseUrl | quote | quote }}
-  {{ .Values.configMap | indent 4 }}
+  {{ .Values.configMap }}
 
   # APP_BASE_URL: {{ .Values.appConfig.app.baseUrl | quote  }}
   # APP_TITLE: {{ .Values.appConfig.app.title | quote }}
