@@ -16,12 +16,8 @@ data:
   AUTH_GITHUB_APP_ORIGIN: {{ .Values.appConfig.auth.providers.github.development.appOrigin | quote }}
   APP_GOOGLE_ANALYTICS_TRACKING_ID: {{ .Values.appConfig.app.googleAnalyticsTrackingId | quote }}
   ORGANIZATION_NAME: {{ .Values.appConfig.organization.name | quote }}
-  #BACKEND_BASE_URL: {{ .Values.appConfig.backend.baseUrl | quote }}
-  #BACKEND_CORS_ORIGIN: {{ .Values.appConfig.backend.cors.origin | quote }}
-  #TECH_DOCS_STORAGE_URL: {{ .Values.appConfig.techdocs.storageUrl | quote }}
-  #TECH_DOCS_REQUEST_URL: {{ .Values.appConfig.techdocs.requestUrl | quote }}
+  BACKEND_CORS_ORIGIN: {{ .Values.appConfig.backend.cors.origin | quote }}
   LIGHTHOUSE_BASE_URL: {{ .Values.appConfig.lighthouse.baseUrl | quote }}
   SONARQUBE_URL: {{ .Values.appConfig.sonarqube.baseUrl | quote }}
   APP_CONFIG_backend_baseUrl: {{ .Values.appConfig.backend.baseUrl | quote | quote }}
-  APP_CONFIG_backend_cors_origin: {{ .Values.appConfig.backend.cors.origin | quote | quote }}
-  #APP_CONFIG_backend_database_connection_ssl_rejectUnauthorized: "false"
+  #APP_CONFIG_backend_cors_origin: {{ .Values.appConfig.backend.cors.origin | quote | quote }}
