@@ -89,8 +89,12 @@ postgresql:
   initdbScriptsSecret: backstage-postgresql-initdb
 
 appConfig:
+  app:
+    baseUrl:
+  lighthouse:
+    baseUrl:
   backend:
-    baseUrl: https://demo.example.com
+    baseUrl:
     database:
       client: pg
       connection:
