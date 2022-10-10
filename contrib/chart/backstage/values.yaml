@@ -94,7 +94,9 @@ appConfig:
   lighthouse:
     baseUrl:
   backend:
-    baseUrl:
+    baseUrl: 
+    listen:
+      port: 7007
     database:
       client: pg
       connection:
