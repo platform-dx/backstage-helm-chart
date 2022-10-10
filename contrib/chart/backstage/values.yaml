@@ -107,11 +107,7 @@ appConfig:
         password:
         ssl:
           rejectUnauthorized: false
-          ca:
-  sentry:
-    organization: example-org-name
-  rollbar:
-    organization: example-org-name  
+          ca:   
 
 configMap: {}
 secret: {}
