@@ -89,18 +89,8 @@ postgresql:
   initdbScriptsSecret: backstage-postgresql-initdb
 
 appConfig:
-  app:
-    baseUrl: https://demo.example.com
-    title: Backstage
-    googleAnalyticsTrackingId: ''
-  organization:
-    name: DemoDX  
   backend:
     baseUrl: https://demo.example.com
-    listen:
-      port: 7007
-    cors:
-      origin: https://demo.example.com
     database:
       client: pg
       connection:
@@ -114,11 +104,6 @@ appConfig:
           ca:
   sentry:
     organization: example-org-name
-  techdocs:
-    storageUrl: https://demo.example.com/api/techdocs/static/docs
-    requestUrl: https://demo.example.com/api/techdocs
-  lighthouse:
-    baseUrl: https://demo.example.com/lighthouse-api
   rollbar:
     organization: example-org-name
 
