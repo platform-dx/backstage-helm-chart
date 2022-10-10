@@ -47,8 +47,6 @@ spec:
                 name: {{ include "backstage.fullname" . }}-backend
             - configMapRef:
                 name: {{ include "backstage.fullname" . }}-app-env
-            - configMapRef:
-                name: {{ include "backstage.fullname" . }}-auth
           env:
             - name: NODE_ENV
               value: {{ .Values.backend.nodeEnv | default "development" }}

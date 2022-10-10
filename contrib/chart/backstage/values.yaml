@@ -165,50 +165,8 @@ appConfig:
           clientSecret: ${AUTH_MICROSOFT_CLIENT_SECRET}
           tenantId: ${AUTH_MICROSOFT_TENANT_ID}
 
-auth:
-  google:
-    clientId: a
-    clientSecret: a
-  github:
-    clientId: c
-    clientSecret: c
-  gitlab:
-    clientId: b
-    clientSecret: b
-    baseUrl: b
-  okta:
-    clientId: b
-    clientSecret: b
-    audience: b
-  oauth2:
-    clientId: b
-    clientSecret: b
-    authUrl: b
-    tokenUrl: b
-  auth0:
-    clientId: b
-    clientSecret: b
-    domain: b
-  microsoft:
-    clientId: f
-    clientSecret: f
-    tenantId: f
-  azure:
-    api:
-      token: h
-  sentryToken: e
-  rollbarAccountToken: f
-  # This is a 'Personal Access Token'
-  circleciAuthToken: r
-  sonarqubeAuthToken: r
-  # Used by the scaffolder to create GitHub repos. Must have 'repo' scope.
-  githubToken: g
-  gitlabToken: g
-  newRelicRestApiKey: r
-  travisciAuthToken: fake-travis-ci-auth-token
-  pagerdutyToken: h
-
 configMap: {}
+secret: {}
 
 
 
