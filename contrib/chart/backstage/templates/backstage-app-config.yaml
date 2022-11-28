@@ -17,4 +17,11 @@ data:
   APP_CONFIG_lighthouse_baseUrl: {{ .Values.appConfig.lighthouse.baseUrl | quote | quote }}
   # other configurations here:
 {{ .Values.configMap | indent 2 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "backstage.fullname" . }}-dir
+data:
+{{ (.Files.Glob "localdir/*").AsConfig | indent 2 }}
   
