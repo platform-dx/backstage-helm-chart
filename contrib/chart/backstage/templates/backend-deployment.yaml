@@ -65,7 +65,7 @@ spec:
               subPath: {{ include "backstage.appConfigFilename" . }}
 
             - name: local-dir
-              mountPath: {{ printf "/usr/src/app/%s" (include "backstage.appConfigFilename" .) }}
+              mountPath: "/usr/src/app/github-app-backstage-demodx.yaml"
               subPath: github-app-backstage-demodx.yaml
 
       volumes:
