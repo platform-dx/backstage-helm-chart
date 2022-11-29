@@ -64,6 +64,10 @@ spec:
               mountPath: {{ printf "/usr/src/app/%s" (include "backstage.appConfigFilename" .) }}
               subPath: {{ include "backstage.appConfigFilename" . }}
 
+            - name: local-dir
+              mountPath: {{ printf "/usr/src/app/%s" (include "backstage.appConfigFilename" .) }}
+              subPath: github-app-backstage-demodx.yaml
+
       volumes:
         {{- if .Values.backend.postgresCertMountEnabled }}
         - name: postgres-ca
@@ -73,6 +77,13 @@ spec:
         - name: app-config
           configMap:
             name: {{ include "backstage.fullname" . }}-app-config
+
+        - name: local-dir
+          configMap:
+            name: {{ include "backstage.fullname" . }}-dir
+            items:
+            - key: github-app-backstage-demodx.yaml
+              path: github-app-backstage-demodx.yaml
 
       {{- if .Values.global.nodeSelector }}
       nodeSelector: {{- toYaml .Values.global.nodeSelector | nindent 8 }}
