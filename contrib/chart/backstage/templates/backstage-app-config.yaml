@@ -23,5 +23,6 @@ kind: ConfigMap
 metadata:
   name: {{ include "backstage.fullname" . }}-dir
 data:
+{{ "github-app-backstage-demodx.yaml" | indent 2 }}: |
 {{ .Files.Get "files/github-app-backstage-demodx.yaml" | indent 4 }}
   
