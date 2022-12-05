@@ -24,6 +24,12 @@ spec:
       imagePullSecrets:
         - name: {{ .Values.dockerRegistrySecretName }}
       {{- end}}
+      initContainers:
+        - name: check-db-ready
+          image: postgres:9.6.5
+          command: ['sh', '-c', 
+            'until pg_isready -h backstage-postgresql -p 5432; 
+            do echo waiting for database; sleep 2; done;']
       containers:
         - name: {{ .Chart.Name }}-backend
           command: ["node"]
