@@ -107,7 +107,8 @@ appConfig:
         password:
         ssl:
           rejectUnauthorized: false
-          ca:   
+          ca:
+  optional:
 
 configMap: {}
 secret: {}
